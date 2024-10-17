@@ -213,6 +213,8 @@ def run(vector, where=SOURCE_ROOT, show_version=False, show_help=False):
     # Supress missing include system headers warning
     vector.append("--suppress=missingInclude")
     vector.append("--suppress=missingIncludeSystem")
+    # Checking all branches
+    vector.append("--check-level=exhaustive")
     vector.append(f"--output-file={DSL[OUTPUT_FILE]}")
     vector.append(f"{where}")
     print("executing static code analysis")
