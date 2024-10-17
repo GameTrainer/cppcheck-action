@@ -207,9 +207,6 @@ def run(vector, where=SOURCE_ROOT, show_version=False, show_help=False):
         for line in completed.stdout.decode(ENCODING, errors="ignore").split("\n"):
             print(" ", line)
 
-    # number of threads, 4 cpus in github runners
-    vector.append("-j")
-    vector.append("4")
     # Supress missing include system headers warning
     vector.append("--suppress=missingInclude")
     vector.append("--suppress=missingIncludeSystem")
