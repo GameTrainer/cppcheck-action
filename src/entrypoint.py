@@ -102,7 +102,7 @@ def split_other_options(text):
     if OTHERS_SEP in text:
         is_first = True
         for entry in text.split(OTHERS_SEP):
-            yield entry.strip() if is_first else f'-{entry.strip()}' # other entries lose dash
+            yield entry.strip() if is_first else f'-{entry.strip()}'  # other entries lose dash
             is_first = False
     else:
         yield text.strip()
@@ -119,7 +119,7 @@ ACTIONS = {  # group by arity of actions to simplify processing below
     ENABLE_INCONCLUSIVE: (operator.ne, DISABLED, "--inconclusive", None),
     FORCE: (operator.ne, DISABLED, "--force", None),
     # unary actions:
-    EXCLUDE_CHECK: (operator.ne, DISABLED, "-i{}", None), # Newer versions of cppcheck (>1.9) do not accept a space here
+    EXCLUDE_CHECK: (operator.ne, DISABLED, "-i{}", None),  # Newer versions of cppcheck (>1.9) do not accept a space here
     ENFORCE_LANGUAGE: (operator.ne, DISABLED, "--language={}", None),
     MAX_CTU_DEPTH: (operator.ne, DISABLED, "--max-ctu-depth={}", None),
     PLATFORM_TYPE: (operator.ne, DISABLED, "--platform={}", None),
